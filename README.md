@@ -54,8 +54,8 @@ Model, adam optimizasyon algoritması ve mean_squared_error kayıp fonksiyonu il
  
 ### 4.	Eğitim Süreci:
 
-Model, 50 epoch boyunca eğitilmiş ve her epoch'ta kayıp değerleri gözlemlenmiştir.
-Eğitim sonucunda kayıp değerlerinde belirgin bir azalma görülmüştür. Örneğin, ilk epoch'ta kayıp 0.0471 iken, son epoch'ta bu değer 0.0242'e kadar düşmüştür.
+Model, 75 epoch boyunca eğitilmiş ve her epoch'ta kayıp değerleri gözlemlenmiştir.
+Eğitim sonucunda kayıp değerlerinde belirgin bir azalma görülmüştür.
  
 ### 5.	Performans Değerlendirmesi:
 
@@ -67,11 +67,11 @@ Bu değerlendirmelerdeki RMSE ve MAE değerleri, modelin yaptığı tahminlerin 
 RMSE: Hataların karekökünü alarak büyük hataları daha fazla cezalandırır. Daha duyarlıdır. Büyük sapmaların etkilerini vurgulamak için idealdir. Yüksek doğruluk gereken durumlarda tercih edilir.
 
 MAE: Hataların büyüklüğünü anlamak için basit ve sezgisel ölçüttür. Hata değerlerini doğrudan anlamayı sağlar ve aşırı sapmalardan daha az etkilenir.
-Buradan çıkaracağımız, modelimiz eğitim sırasında 7,8 birimlik hatalar yaparken, bu birimler daha fazla veya asıl değerden daha az olabilir, test sırasında ise daha az hata yapmıştır. Bu istenilen bir durumdur. Makinenin sonradan karşılaştığı veride daha başarılı olması, modelin başarısının bir ölçütüdür.
+Buradan çıkaracağımız, modelimiz eğitim sırasında 5.85 birimlik hatalar yaparken, bu birimler daha fazla veya asıl değerden daha az olabilir, test sırasında ise daha az hata yapmıştır. Bu istenilen bir durumdur. Makinenin sonradan karşılaştığı veride daha başarılı olması, modelin başarısının bir ölçütüdür.
 	
- R2: Modelin ne kadar iyi genellediğini gösteren bir performans metriğidir.
+R2: Modelin ne kadar iyi genellediğini gösteren bir performans metriğidir.
 	
-MAPE: Tahmin edilen değerlerle gerçek değerler arasındaki farkın, gerçek değerlere ortalamasını alır. Modelimiz eğitim setinde yüzde 23.82 oranında hata yapmışken, test setinde sadece yüzde 16.13 hata yapmıştır. Geri kalan yüzdeler doğruluk oranını belirtir. Örnek: Test verisinin 100 – 16.13 = 83.87’lik kısmını doğru tahmin etmeyi başarmıştır.
+MAPE: Tahmin edilen değerlerle gerçek değerler arasındaki farkın, gerçek değerlere ortalamasını alır. Modelimiz eğitim setinde yüzde 11.04% oranında hata yapmışken, test setinde sadece yüzde 8.77% hata yapmıştır. Geri kalan yüzdeler doğruluk oranını belirtir. Örnek: Test verisinin 100 – 8.77 = 91.23’lik kısmını doğru tahmin etmeyi başarmıştır.
  
 ### 6. Çıkarımlar:
 
@@ -79,41 +79,6 @@ MAPE: Tahmin edilen değerlerle gerçek değerler arasındaki farkın, gerçek d
 Modelin, test verisi üzerindeki performansının daha ileri değerlendirmelerle doğrulanması gerekmektedir.
 Sonuç olarak, bu proje, zaman serisi verileri için LSTM modelinin uygunluğunu ve hava kalitesi tahminlerinde kullanılabilirliğini ortaya koymaktadır. İzmir özelinde yapılan analizler, bu tür bir modelin uygulanabilirliğini göstermiştir.
  
- 
-Model sadece Ocak 1’e kadar veriler ile eğitilerek Ocak 2’den Ocak 15’i dahil olmak üzere 2 haftalık bir tahmin gerçekleştirdi.
- 
-IQAir Hava Kalitesi İzleme Sitesine göre tahmin ettiğimiz değerleri karşılaştıralım.
-Ocak 2: 146
-
-Ocak 3: 105
-
-Ocak 4: 65
-
-Ocak 5: 77
-
-Ocak 6: 123
-
-Ocak 7: 106
-
-Ocak 8: 74
-
-Ocak 9: 86
-
-Ocak 10: 92
-
-Ocak 11: 83
-
-Ocak 12: 75
-
-Ocak 13: 61
-
-Ocak 14: 58
-
-Ocak 15: 66
-
- ![image](https://github.com/user-attachments/assets/49b06402-f131-42c1-9ac9-e43e962074b7)
-
-Sonuçlardan da gördüğü üzere geliştirdiğimiz model hem AQI değeri olarak hem de tehlike aralıkları olarak doğruluk göstermektedir.
 
 ## 1.4 Kaynakça
 •	https://peyrone.medium.com/easy-guide-to-forcast-air-quality-with-lstm-c8596aeb5814
